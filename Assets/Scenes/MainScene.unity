@@ -590,6 +590,11 @@ Prefab:
       propertyPath: CanvasHUD
       value: 
       objectReference: {fileID: 1167052500}
+    - target: {fileID: 114956647494515140, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+        type: 2}
+      propertyPath: EconomyObject
+      value: 
+      objectReference: {fileID: 188225526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0
@@ -833,6 +838,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114956647494515140, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+        type: 2}
+      propertyPath: EconomyObject
+      value: 
+      objectReference: {fileID: 188225526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0
@@ -945,6 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factoryUIPanel: {fileID: 1265712386}
+  levelUpButton: {fileID: 1307718557}
   incomeText: {fileID: 170575757}
   levelUpText: {fileID: 918301547}
 --- !u!1001 &1200961259
@@ -1059,6 +1070,11 @@ Prefab:
       propertyPath: CanvasHUD
       value: 
       objectReference: {fileID: 1167052500}
+    - target: {fileID: 114956647494515140, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+        type: 2}
+      propertyPath: EconomyObject
+      value: 
+      objectReference: {fileID: 188225526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0
@@ -1216,7 +1232,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1167052505}
-        m_MethodName: DidTapLevelUpButton
+        m_MethodName: DidTapLevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1374,6 +1390,11 @@ Prefab:
       propertyPath: CanvasHUD
       value: 
       objectReference: {fileID: 1167052500}
+    - target: {fileID: 114956647494515140, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+        type: 2}
+      propertyPath: EconomyObject
+      value: 
+      objectReference: {fileID: 188225526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0

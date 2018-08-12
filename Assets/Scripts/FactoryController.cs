@@ -6,6 +6,7 @@ public class FactoryController : MonoBehaviour {
 
     public TextMesh levelReadout;
     public GameObject CanvasHUD;
+    public GameObject EconomyObject;
 
     private int factoryLevel;
     private Dictionary<int, int> levelToIncomeMap;
@@ -17,6 +18,10 @@ public class FactoryController : MonoBehaviour {
 	}
 	     void OnMouseDown() {
         CanvasHUD.GetComponent<HUDScript>().ShowStatsForFactory(this);     }
+
+    public bool CanLevelUp() {
+        return CostToLevelUp() <= EconomyObject.GetComponent<EconomyController>().CurrencyBalance();
+    }
 
     public int Income () {
         return factoryLevel;

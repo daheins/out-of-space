@@ -45,4 +45,8 @@ public class EconomyController : MonoBehaviour {
         currencyBalance = currencyBalance - amount;
         return true;
     }
+
+    public float CurrencyBalance() {
+        return currencyBalance;
+    }
 }

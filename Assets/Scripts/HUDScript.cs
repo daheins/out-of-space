@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HUDScript : MonoBehaviour {
 
     public GameObject factoryUIPanel;
+    public GameObject levelUpButton;
     public Text incomeText;
     public Text levelUpText;
 
@@ -14,6 +15,14 @@ public class HUDScript : MonoBehaviour {
 	private void Start() {
         factoryUIPanel.SetActive(false);
 	}
+
+	private void Update() {
+        CheckCanLevelUp();
+	}
+
+	void CheckCanLevelUp() {
+        levelUpButton.GetComponent<Button>().interactable = selectedFactory.CanLevelUp();
+    }
 
     public void ShowStatsForFactory(FactoryController factory) {
         factoryUIPanel.SetActive(true);
@@ -25,9 +34,11 @@ public class HUDScript : MonoBehaviour {
         levelUpText.text = "Cost to Level: " + levelUpCost.ToString();
 
         selectedFactory = factory;
+
+        CheckCanLevelUp();
     }
 
-    public void DidTapLevelUpButton() {
+    public void DidTapLevelUp() {
         selectedFactory.LevelUpFactory();
         ShowStatsForFactory(selectedFactory);
     }
