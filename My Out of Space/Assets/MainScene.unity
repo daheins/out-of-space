@@ -144,6 +144,7 @@ MonoBehaviour:
   income: 0
   currencyBalanceText: {fileID: 567599916}
   incomeText: {fileID: 1999060596}
+  simulationSpeed: 10
 --- !u!4 &188225528
 Transform:
   m_ObjectHideFlags: 0
