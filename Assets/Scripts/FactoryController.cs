@@ -19,6 +19,7 @@ public class FactoryController : MonoBehaviour {
 	}
 
     public int Income () {
+        return 1;
         return levelToIncomeMap[factoryLevel];
     }
 
