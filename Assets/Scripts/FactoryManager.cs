@@ -13,7 +13,10 @@ public class FactoryManager : MonoBehaviour {
 
     private List<GameObject> factoryList;
 
+    // View Stuff
     const float GoldenRatio = 1.61803398874989484820458683436F;
+    const float DefaultFactorySize = 1000 / 100;
+    const float StarterScale = .7F;
 
     void Start () {
         List<FactoryInfo> factories = LoadFactoryData();
@@ -32,16 +35,49 @@ public class FactoryManager : MonoBehaviour {
 
     GameObject CreateFactory(FactoryInfo factoryInfo, int index) {
         GameObject fObject = Instantiate(factoryPrefab);
-        fObject.transform.SetParent(this.transform);
-        fObject.transform.position += new Vector3(index * 2, 0, 0);
-        float scale = (float)Math.Pow(1 / GoldenRatio, index);
-        fObject.transform.localScale = new Vector3(scale,
-                                                   scale,
-                                                   scale);
+
+        // Model
         FactoryController factory = fObject.GetComponent<FactoryController>();
         factory.CanvasHUD = CanvasHUD;
         factory.EconomyObject = EconomyObject;
         factory.SetUpParams(factoryInfo);
+
+        // View
+        float invRatio = 1 / GoldenRatio;
+        fObject.transform.SetParent(this.transform, false);
+
+        float prevScale = StarterScale;
+        Debug.Log(string.Format("making factory {0}", index));
+        Debug.Log(string.Format("starting location {0}", fObject.transform.position));
+
+        for (int loop = 0; loop < index; loop++) {
+            float newScale = prevScale * invRatio;
+            Vector3 vectorAdd = new Vector3(0, 0, 0);
+            switch (loop % 4) {
+                case 0:
+                    vectorAdd = new Vector3(DefaultFactorySize * (prevScale / 2 + newScale / 2),
+                                            DefaultFactorySize * (prevScale / 2 - newScale / 2), 0);
+                    break;
+                case 1:
+                    vectorAdd = new Vector3(DefaultFactorySize * (prevScale / 2 - newScale / 2),
+                                            -DefaultFactorySize * (prevScale / 2 + newScale / 2), 0);
+                    break;
+                case 2:
+                    vectorAdd = new Vector3(-DefaultFactorySize * (prevScale / 2 + newScale / 2),
+                                            -DefaultFactorySize * (prevScale / 2 - newScale / 2), 0);
+                    break;
+                case 3:
+                    vectorAdd = new Vector3(-DefaultFactorySize * (prevScale / 2 - newScale / 2),
+                                            DefaultFactorySize * (prevScale / 2 + newScale / 2), 0);
+                    break;
+            }
+            Debug.Log(vectorAdd);
+            fObject.transform.position += vectorAdd;
+            prevScale = newScale;
+        }
+        fObject.transform.localScale = new Vector3(prevScale,
+                                                   prevScale,
+                                                   prevScale);
         return fObject;
     }
 	
