@@ -297,6 +297,7 @@ MonoBehaviour:
   factory1: {fileID: 948018940}
   factory2: {fileID: 599058690}
   startingIncome: 1
+  factoryParent: {fileID: 780182903}
   simulationSpeed: 1
 --- !u!4 &188225528
 Transform:

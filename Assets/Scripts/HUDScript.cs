@@ -21,13 +21,17 @@ public class HUDScript : MonoBehaviour {
 	}
 
 	void CheckCanLevelUp() {
-        levelUpButton.GetComponent<Button>().interactable = selectedFactory.CanLevelUp();
+        if (selectedFactory)
+        {
+            levelUpButton.GetComponent<Button>().interactable = selectedFactory.CanLevelUp();
+        }
+
     }
 
     public void ShowStatsForFactory(FactoryController factory) {
         factoryUIPanel.SetActive(true);
 
-        int income = factory.Income();
+        float income = factory.Income();
         int levelUpCost = factory.CostToLevelUp();
 
         incomeText.text = "Income: " + Mathf.Round(income).ToString();
