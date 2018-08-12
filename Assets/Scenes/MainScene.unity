@@ -296,8 +296,10 @@ MonoBehaviour:
   incomeText: {fileID: 1999060596}
   factory1: {fileID: 948018940}
   factory2: {fileID: 599058690}
-  startingIncome: 1
+  factory3: {fileID: 1457378303}
+  factory4: {fileID: 1087617579}
   factoryParent: {fileID: 780182903}
+  startingIncome: 1
   simulationSpeed: 1
 --- !u!4 &188225528
 Transform:
@@ -847,6 +849,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1087617579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1631731094302828, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+    type: 2}
+  m_PrefabInternal: {fileID: 1321102859}
 --- !u!1 &1167052500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1411,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224168740306195020, guid: 9ce7710b525e247ba9ea1fa932ea3940,
     type: 2}
   m_PrefabInternal: {fileID: 1321102859}
+--- !u!1 &1457378303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1631731094302828, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+    type: 2}
+  m_PrefabInternal: {fileID: 1200961259}
 --- !u!1 &1812964893
 GameObject:
   m_ObjectHideFlags: 0

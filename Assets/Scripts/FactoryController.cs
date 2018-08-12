@@ -37,8 +37,9 @@ public class FactoryController : MonoBehaviour {
         levelToLevelUpCostMap = new Dictionary<int, float>();
 
         for (var i = 0; i <= maxLevel; i++){
-            levelToIncomeMap[i] = initialIncome * i * initialProductivity;
             levelToLevelUpCostMap[i] = initialCost * (float)Math.Pow(coefficient, i);
+            levelToIncomeMap[i] = initialIncome * i * initialProductivity;
+
         }
         Debug.Log(levelToIncomeMap[0]);
     }
@@ -48,12 +49,12 @@ public class FactoryController : MonoBehaviour {
         return levelToIncomeMap[factoryLevel];
     }
 
-    public int CostToLevelUp () {
-        return 1;
-        //return levelToIncomeMap[factoryLevel];
+    public float CostToLevelUp () {
+        return levelToLevelUpCostMap[factoryLevel];
     }
 
     public void LevelUpFactory () {
+        EconomyObject.GetComponent<EconomyController>().SpendCurrency(levelToLevelUpCostMap[factoryLevel]);
         factoryLevel += 1;
         levelReadout.text = factoryLevel.ToString();
     }

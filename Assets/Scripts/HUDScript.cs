@@ -32,7 +32,7 @@ public class HUDScript : MonoBehaviour {
         factoryUIPanel.SetActive(true);
 
         float income = factory.Income();
-        int levelUpCost = factory.CostToLevelUp();
+        float levelUpCost = factory.CostToLevelUp();
 
         incomeText.text = "Income: " + Mathf.Round(income).ToString();
         levelUpText.text = "Cost to Level: " + levelUpCost.ToString();

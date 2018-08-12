@@ -15,6 +15,8 @@ public class EconomyController : MonoBehaviour {
 
     public GameObject factory1;
     public GameObject factory2;
+    public GameObject factory3;
+    public GameObject factory4;
     public GameObject factoryParent;
 
     public List<List<string>> parameters;
@@ -47,6 +49,8 @@ public class EconomyController : MonoBehaviour {
 
         float i1 = factory1.GetComponent<FactoryController>().Income();
         float i2 = factory2.GetComponent<FactoryController>().Income();
+        float i3 = factory3.GetComponent<FactoryController>().Income();
+        float i4 = factory4.GetComponent<FactoryController>().Income();
         income = startingIncome + i1 + i2;    
     }
 
