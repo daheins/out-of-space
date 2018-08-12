@@ -17,8 +17,7 @@ public class FactoryController : MonoBehaviour {
 	     void OnMouseDown() {         LevelUpFactory();     }
 
     public int Income () {
-        return 1;
-        return levelToIncomeMap[factoryLevel];
+        return factoryLevel;
     }
 
     public void LevelUpFactory () {
