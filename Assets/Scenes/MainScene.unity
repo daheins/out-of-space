@@ -598,6 +598,10 @@ Prefab:
       propertyPath: EconomyObject
       value: 
       objectReference: {fileID: 188225526}
+    - target: {fileID: 1631731094302828, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0
@@ -619,6 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 780182904}
+  - component: {fileID: 780182905}
   m_Layer: 0
   m_Name: FactoryParent
   m_TagString: Untagged
@@ -643,6 +648,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780182905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780182903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45665293888749568da4b7466739efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factoryPrefab: {fileID: 1631731094302828, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+    type: 2}
+  CanvasHUD: {fileID: 1167052500}
+  EconomyObject: {fileID: 188225526}
 --- !u!1 &918301545
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +866,25 @@ Prefab:
       propertyPath: EconomyObject
       value: 
       objectReference: {fileID: 188225526}
+    - target: {fileID: 1631731094302828, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224168740306195020, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224168740306195020, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224168740306195020, guid: 9ce7710b525e247ba9ea1fa932ea3940,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0
@@ -1083,6 +1122,10 @@ Prefab:
       propertyPath: EconomyObject
       value: 
       objectReference: {fileID: 188225526}
+    - target: {fileID: 1631731094302828, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0
@@ -1403,6 +1446,14 @@ Prefab:
       propertyPath: EconomyObject
       value: 
       objectReference: {fileID: 188225526}
+    - target: {fileID: 1631731094302828, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce7710b525e247ba9ea1fa932ea3940, type: 2}
   m_IsPrefabAsset: 0

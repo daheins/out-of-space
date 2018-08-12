@@ -21,11 +21,9 @@ public class HUDScript : MonoBehaviour {
 	}
 
 	void CheckCanLevelUp() {
-        if (selectedFactory)
-        {
+        if (selectedFactory) {
             levelUpButton.GetComponent<Button>().interactable = selectedFactory.CanLevelUp();
         }
-
     }
 
     public void ShowStatsForFactory(FactoryController factory) {
