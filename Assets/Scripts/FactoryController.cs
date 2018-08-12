@@ -5,6 +5,7 @@ using UnityEngine;
 public class FactoryController : MonoBehaviour {
 
     public TextMesh levelReadout;
+    public GameObject CanvasHUD;
 
     private int factoryLevel;
     private Dictionary<int, int> levelToIncomeMap;
@@ -14,10 +15,16 @@ public class FactoryController : MonoBehaviour {
         factoryLevel = 0;
         levelToIncomeMap = new Dictionary<int, int> ();
 	}
-	     void OnMouseDown() {         LevelUpFactory();     }
+	     void OnMouseDown() {
+        CanvasHUD.GetComponent<HUDScript>().ShowStatsForFactory(this);     }
 
     public int Income () {
         return factoryLevel;
+    }
+
+    public int CostToLevelUp () {
+        return 1;
+        //return levelToIncomeMap[factoryLevel];
     }
 
     public void LevelUpFactory () {
