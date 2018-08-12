@@ -13,37 +13,29 @@ public class FactoryController : MonoBehaviour {
     private int factoryLevel;
     private Dictionary<int, float> levelToIncomeMap;
     private Dictionary<int, float> levelToLevelUpCostMap;
-
-	// Use this for initialization
-	void Start () {
-        factoryLevel = 0;
-        maxLevel = 10;
-
-	}
 	     void OnMouseDown() {
         CanvasHUD.GetComponent<HUDScript>().ShowStatsForFactory(this);
         }
 
     public bool CanLevelUp() {
+        if (factoryLevel >= maxLevel) {
+            return false;
+        }
         return CostToLevelUp() <= EconomyObject.GetComponent<EconomyController>().CurrencyBalance();
     }
 	
-    public void SetUpParams(float initialCost,
-                            float coefficient,
-                            float initialIncome, 
-                            float initialProductivity) {
+    public void SetUpParams(FactoryInfo info) {
+        factoryLevel = 0;
+        maxLevel = 10;
 
         levelToIncomeMap = new Dictionary<int, float>();
         levelToLevelUpCostMap = new Dictionary<int, float>();
 
-        for (var i = 0; i <= maxLevel; i++){
-            levelToLevelUpCostMap[i] = initialCost * (float)Math.Pow(coefficient, i);
-            levelToIncomeMap[i] = initialIncome * i * initialProductivity;
-
+        for (var i = 0; i < maxLevel; i++){
+            levelToLevelUpCostMap[i] = info.initialCost * (float)Math.Pow(info.coefficient, i);
+            levelToIncomeMap[i] = info.initialIncome * i * info.initialProductivity;
         }
-        Debug.Log(levelToIncomeMap[0]);
     }
- 
 
     public float Income () {
         return levelToIncomeMap[factoryLevel];
